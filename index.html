@@ -1,0 +1,871 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CozyKnot | Cute & Cozy Crochet</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:#fffaf5;
+    color:#392b29;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 4.5%;
+    background:#fffaf5;
+    position:sticky;
+    top:0;
+    z-index:100;
+    border-bottom:1px solid #f2e5dc;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:78px;
+    height:78px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.logo h2{
+    font-family:'Playfair Display',serif;
+    font-size:30px;
+    color:#9a623d;
+}
+
+.logo p{
+    font-size:10px;
+    letter-spacing:3px;
+    color:#96705e;
+    margin-top:3px;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:#bd806e;
+}
+
+.nav-btn,
+.primary-btn{
+    background:#b47b62;
+    color:white;
+    padding:17px 30px;
+    border-radius:35px;
+    font-size:15px;
+    font-weight:600;
+    display:inline-block;
+}
+
+.nav-btn:hover,
+.primary-btn:hover{
+    background:#95604b;
+}
+
+/* ================= FIRST PAGE ================= */
+
+.hero{
+    background:#f9e9e1;
+    padding:55px 3.5%;
+}
+
+.hero-container{
+    max-width:1460px;
+    margin:auto;
+    background:#fffaf5;
+    border-radius:40px;
+    padding:60px 32px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:560px;
+}
+
+/* ONLY ORIGINAL LOGO */
+
+.hero-logo img{
+    width:420px;
+    height:420px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+/* ================= PRODUCTS ================= */
+
+.section{
+    padding:85px 7%;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-heading small{
+    color:#b17b62;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:12px;
+    font-weight:700;
+}
+
+.section-heading h2{
+    font-family:'Playfair Display',serif;
+    font-size:43px;
+    margin:13px 0;
+}
+
+.section-heading p{
+    color:#8b7770;
+    font-size:15px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.product-card{
+    background:white;
+    border:1px solid #f1e2d9;
+    border-radius:22px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 18px 35px #d7b9a633;
+}
+
+.product-image{
+    height:245px;
+    background:#fdf1eb;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h3{
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    margin-bottom:7px;
+}
+
+.product-info p{
+    color:#9b8177;
+    font-size:12px;
+    line-height:1.6;
+    min-height:38px;
+}
+
+.product-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:16px;
+    gap:5px;
+}
+
+.price{
+    font-size:15px;
+    font-weight:700;
+    color:#a87561;
+}
+
+.order-btn{
+    border:1px solid #dfc4b7;
+    background:#fffaf5;
+    color:#956453;
+    border-radius:20px;
+    padding:9px 13px;
+    font-size:11px;
+    font-weight:700;
+}
+
+/* ================= ABOUT US ================= */
+
+.about{
+    background:#f9e9e1;
+    padding:85px 7%;
+}
+
+.about-container{
+    max-width:1400px;
+    margin:auto;
+    background:#fffaf5;
+    border-radius:35px;
+    padding:32px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-art img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:28px;
+    display:block;
+}
+
+.about-content{
+    padding-right:20px;
+}
+
+.about-content small{
+    letter-spacing:4px;
+    color:#b17b62;
+    font-size:12px;
+    font-weight:700;
+}
+
+.about h2{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(38px,4vw,62px);
+    line-height:1.15;
+    margin:18px 0 25px;
+}
+
+.about p{
+    color:#806b62;
+    line-height:1.9;
+    font-size:15px;
+    margin-bottom:20px;
+}
+
+.features{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.feature{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    font-size:13px;
+    font-weight:600;
+    text-align:center;
+}
+
+.feature span{
+    background:#f9e9e1;
+    width:58px;
+    height:58px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    font-size:25px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    text-align:center;
+    padding:90px 7%;
+    background:#fffaf5;
+}
+
+.contact h2{
+    font-family:'Playfair Display',serif;
+    font-size:44px;
+    margin:15px 0;
+}
+
+.contact p{
+    color:#8b7770;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.contact-box{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.contact-item{
+    background:white;
+    border:1px solid #f0dfd5;
+    border-radius:15px;
+    padding:18px 25px;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#392b29;
+    color:#f8e8df;
+    padding:45px 7%;
+    text-align:center;
+}
+
+footer h2{
+    font-family:'Playfair Display',serif;
+    font-size:29px;
+    margin-bottom:10px;
+}
+
+footer p{
+    font-size:12px;
+    color:#cdb4a7;
+    line-height:2;
+}
+
+.footer-bottom{
+    margin-top:25px;
+    border-top:1px solid #5b4540;
+    padding-top:20px;
+    font-size:11px;
+    color:#b99e92;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px){
+
+    .nav-links{
+        gap:18px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-container{
+        grid-template-columns:1fr;
+    }
+
+    .about-content{
+        padding:15px;
+    }
+
+    .hero-logo img{
+        width:350px;
+        height:350px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:12px 4%;
+    }
+
+    .logo img{
+        width:60px;
+        height:60px;
+    }
+
+    .logo h2{
+        font-size:23px;
+    }
+
+    .logo p{
+        font-size:8px;
+        letter-spacing:2px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .nav-btn{
+        padding:12px 17px;
+        font-size:12px;
+    }
+
+    .hero{
+        padding:25px 4%;
+    }
+
+    .hero-container{
+        padding:30px 15px;
+        border-radius:25px;
+        min-height:350px;
+    }
+
+    .hero-logo img{
+        width:260px;
+        height:260px;
+    }
+
+    .section{
+        padding:60px 5%;
+    }
+
+    .section-heading h2{
+        font-size:34px;
+    }
+
+    .products{
+        gap:12px;
+    }
+
+    .product-image{
+        height:170px;
+    }
+
+    .product-info{
+        padding:13px;
+    }
+
+    .product-info h3{
+        font-size:18px;
+    }
+
+    .product-info p{
+        font-size:11px;
+    }
+
+    .product-bottom{
+        flex-wrap:wrap;
+    }
+
+    .price{
+        font-size:12px;
+    }
+
+    .order-btn{
+        padding:8px 10px;
+    }
+
+    .about{
+        padding:25px 4%;
+    }
+
+    .about-container{
+        padding:15px;
+        border-radius:25px;
+    }
+
+    .about-art img{
+        height:300px;
+        border-radius:20px;
+    }
+
+    .about h2{
+        font-size:36px;
+    }
+
+    .about p{
+        font-size:13px;
+    }
+
+    .contact h2{
+        font-size:35px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+<a href="#home" class="logo">
+
+<img
+src="Image/logo.png"
+alt="CozyKnot Original Logo"
+>
+
+<div>
+<h2>CozyKnot</h2>
+<p>CUTE & COZY CROCHET</p>
+</div>
+
+</a>
+
+<div class="nav-links">
+
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#about">About Us</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<a href="#contact" class="nav-btn">
+Shop Now ♡
+</a>
+
+</nav>
+
+
+<!-- ================= FIRST PAGE ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-container">
+
+<!-- ONLY LOGO ON FIRST PAGE -->
+
+<div class="hero-logo">
+
+<img
+src="Image/logo.png"
+alt="CozyKnot Original Logo"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRODUCTS PAGE ================= -->
+
+<section class="section" id="products">
+
+<div class="section-heading">
+
+<small>Our Handmade Collection</small>
+
+<h2>Made With Love, Just For You</h2>
+
+<p>
+Every stitch tells a story.
+Every creation carries a little happiness.
+</p>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- FLOWERS -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img
+src="Image/flower.png"
+alt="Handmade Crochet Flowers"
+>
+
+</div>
+
+<div class="product-info">
+
+<h3>Crochet Flowers</h3>
+
+<p>Soft, handmade blooms that never fade.</p>
+
+<div class="product-bottom">
+
+<span class="price">₹199 onwards</span>
+
+<a href="#contact" class="order-btn">Enquire ♡</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BOUQUETS -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img
+src="Image/bouquet.png"
+alt="Handmade Crochet Bouquets"
+>
+
+</div>
+
+<div class="product-info">
+
+<h3>Flower Bouquets</h3>
+
+<p>Beautiful crochet bouquets for every occasion.</p>
+
+<div class="product-bottom">
+
+<span class="price">₹499 onwards</span>
+
+<a href="#contact" class="order-btn">Enquire ♡</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BAGS -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img
+src="Image/bag.png"
+alt="Handmade Crochet Bags"
+>
+
+</div>
+
+<div class="product-info">
+
+<h3>Crochet Bags</h3>
+
+<p>Cozy, stylish and perfect for everyday moments.</p>
+
+<div class="product-bottom">
+
+<span class="price">₹699 onwards</span>
+
+<a href="#contact" class="order-btn">Enquire ♡</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- KEYCHAINS -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img
+src="Image/keychain.png"
+alt="Handmade Crochet Keychains"
+>
+
+</div>
+
+<div class="product-info">
+
+<h3>Crochet Keychains</h3>
+
+<p>Little handmade charms for your bags and gifts.</p>
+
+<div class="product-bottom">
+
+<span class="price">₹149 onwards</span>
+
+<a href="#contact" class="order-btn">Enquire ♡</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT US - LAST PAGE ================= -->
+
+<section class="about" id="about">
+
+<div class="about-container">
+
+
+<!-- CROCHET PRODUCTS COMBINATION ONLY HERE -->
+
+<div class="about-art">
+
+<img
+src="Image/crochet-products.png"
+alt="CozyKnot Handmade Crochet Products"
+>
+
+</div>
+
+
+<div class="about-content">
+
+<small>OUR STORY</small>
+
+<h2>
+Small Stitches,<br>
+Big Happiness. ♡
+</h2>
+
+<p>
+Welcome to <strong>CozyKnot</strong>, your little corner
+of handmade happiness. We create cute and cozy crochet
+products with love, patience, and beautiful little stitches.
+</p>
+
+<p>
+From flowers that never fade to bags, bouquets and
+keychains, every piece is made to bring warmth and joy
+to your everyday life.
+</p>
+
+<div class="features">
+
+<div class="feature">
+<span>🧶</span>
+Handmade
+</div>
+
+<div class="feature">
+<span>♡</span>
+Made with Love
+</div>
+
+<div class="feature">
+<span>✿</span>
+Unique Designs
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+<div class="section-heading" style="margin-bottom:25px">
+
+<small>COME SAY HELLO ♡</small>
+
+<h2>Find Your CozyKnot</h2>
+
+<p>
+Visit us at EA Mall, Chennai and discover
+your next favorite crochet piece.
+</p>
+
+</div>
+
+<div class="contact-box">
+
+<div class="contact-item">
+📍 EA Mall, Chennai
+</div>
+
+<a href="tel:9876543210" class="contact-item">
+📞 9876543210
+</a>
+
+<a
+href="https://wa.me/919876543210"
+target="_blank"
+class="contact-item">
+
+💬 WhatsApp Us
+
+</a>
+
+</div>
+
+<a
+href="https://wa.me/919876543210?text=Hi%20CozyKnot%2C%20I%20would%20like%20to%20know%20more%20about%20your%20crochet%20products."
+target="_blank"
+class="primary-btn">
+
+Enquire About Products ♡
+
+</a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h2>CozyKnot 🧶</h2>
+
+<p>
+Cute & Cozy Crochet<br>
+Small stitches, big happiness.
+</p>
+
+<div class="footer-bottom">
+
+© 2026 CozyKnot.
+Handmade with love in Chennai ♡
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
